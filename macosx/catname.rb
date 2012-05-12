@@ -1,4 +1,5 @@
-Facter.add(:macosx_catname) do
+# A TTL of 3600 seems safe since it seems unlikely you'd be able to do an upgrade in less than an hour
+Facter.add(:macosx_catname, :ttl => 3600 ) do
   confine :kernel => "Darwin"
   ### http://en.wikipedia.org/wiki/OS_X#Versions
   setcode do
